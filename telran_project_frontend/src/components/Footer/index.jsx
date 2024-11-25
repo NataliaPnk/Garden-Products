@@ -6,11 +6,11 @@ import { IoLogoWhatsapp } from "react-icons/io";
 export default function Footer() {
     return (
         <footer className={s.footer}>
-            <h1>Contact</h1>
+            <h2>Contact</h2>
 
             <div className={s.container}>
                 <div>
-                    <h2>Phone</h2>
+                    <span>Phone</span>
                     <p>
                         <a href="tel:+499999999999">
                             +49 999 999 99 99
@@ -19,18 +19,21 @@ export default function Footer() {
                 </div>
 
                 <div>
-                    <h2>Socials</h2>
+                    <span>Socials</span>
+                    <div>
                     <a href="https://www.instagram.com" > <BiLogoInstagramAlt className={s.icons} /></a>
-                    <a href="https://www.whatsapp.com"> <IoLogoWhatsapp className={s.icons}/></a>
+                    <a href="https://www.whatsapp.com"> <IoLogoWhatsapp className={s.icons}/></a>                        
+                    </div>
+
                 </div>
 
                 <div>
-                    <h2>Address</h2>
+                    <span>Address</span>
                     <p>Linkstraße 2, 8 OG, 10 785, Berlin, Deutschland</p>
                 </div>
 
                 <div>
-                    <h2>Working Hours</h2>
+                    <span>Working Hours</span>
                     <p>24 hours a day</p>
                 </div>
 
