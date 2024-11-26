@@ -1,8 +1,11 @@
 import './App.css';
+import DiscountForm from './components/DiscountForm';
 
 function App() {
   return (
-    <div>App</div>
+    <div>
+      <DiscountForm />
+    </div>
   );
 }
 
