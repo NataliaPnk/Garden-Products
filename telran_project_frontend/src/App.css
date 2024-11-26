@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: rgba(66, 68, 54, 1);
+  font-size: 64px;
+  font-weight: 700;
+}
+
+section {
+  width: 100%;
+  max-width: 1500px;
+  padding: 80px 40px;
+  background-color: rgb(250, 250, 232);
+}
