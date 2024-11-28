@@ -12,9 +12,9 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-  dispatch(getAllProducts()), [])
-  dispatch(getAllCategories()), [])
-  }
+  dispatch(getAllProducts(), [])
+  dispatch(getAllCategories(), [])
+  })
             
   return (
     <div>
