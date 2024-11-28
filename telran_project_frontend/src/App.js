@@ -1,3 +1,4 @@
+import Footer from './components/Footer';
 import DiscountForm from './components/DiscountForm';
 import { useEffect } from "react";
 import "./App.css";
@@ -17,9 +18,10 @@ function App() {
             
   return (
     <div>
-      <DiscountForm />
       <CategoriesContainer />
+      <DiscountForm />
       <ProductsSaleContainer />
+      <Footer/>
     </div>
   );
 }
