@@ -1,3 +1,4 @@
+import DiscountForm from './components/DiscountForm';
 import { useEffect } from "react";
 import "./App.css";
 import { useDispatch } from "react-redux";
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div>
+      <DiscountForm />
       <CategoriesContainer />
     </div>
   );
