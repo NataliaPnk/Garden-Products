@@ -1,0 +1,38 @@
+.container > div:first-of-type {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.container > div:first-child > h2 {
+  margin-right: 25px;
+}
+
+.container > div:first-of-type > div {
+  height: 1px;
+  background-color: rgba(221, 221, 221, 1);
+  flex-grow: 1;
+}
+
+.container > div > a {
+  background-color: rgb(250, 250, 232);
+  color: rgba(139, 139, 139, 1);
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid rgba(221, 221, 221, 1);
+
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container > div > a:hover {
+  background-color: #f3f7d6;
+  color: #8c8a8a;
+}
+
+.container > div:last-of-type {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
