@@ -14,7 +14,7 @@ export default function CategoriesContainer() {
       <div>
         <h2>Categories</h2>
         <div></div>
-        <Link>All categories</Link>
+        <Link to='/all_categories'>All categories</Link>
       </div>
 
       <div>
