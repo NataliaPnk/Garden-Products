@@ -8,6 +8,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+
 }
 
 a {
@@ -25,4 +26,5 @@ section {
   max-width: 1500px;
   padding: 80px 40px;
   background-color: rgb(250, 250, 232);
+  margin: 0 auto;
 }

@@ -3,71 +3,72 @@
   max-width: 1500px;
   padding: 80px 40px;
   background-color: rgb(250, 250, 232);
-}
-
-.footer > h2 {
-  margin-bottom: 40px;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-
-.container span {
-  font-weight: 500;
-  font-size: 20px;
-  color: #8b8b8b;
-}
-
-.container > div {
-  background-color: #f2f6d3;
-  border-radius: 10px;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 16px;
-}
-
-.container a,
-p {
-  font-weight: 600;
-  font-size: 40px;
-  color: #424436;
-}
-
-.container div:first-child {
-  width: 780px;
-  height: 150px;
-}
-
-.container div:nth-child(2) {
-  width: 548px;
-  height: 150px;
-}
-.container div:nth-child(2) > div {
-  display: inline-flex;
-}
-.container div:nth-child(3) {
-  width: 780px;
-  height: 194px;
-}
-.container div:last-child {
-  width: 548px;
-  height: 194px;
-}
-
-.icons {
-  width: 43px;
-  height: 44px;
-  display: flex;
-  gap: 16px;
-}
-
-.mapContainer {
-  margin-top: 32px;
   margin: 0 auto;
-  margin-top: 32px;
+}
+
+.contactContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+  
+
+.bigItem {
+    flex: 780;
+    margin-bottom: 12px;
+    background-color: #F2F6D3;
+    padding: 32px;
+    border-radius: 10px;
+    gap: 16px;
+}
+  
+.smallItem {
+    flex: 548;
+    margin-bottom: 12px;
+    background-color: #F2F6D3;
+    padding: 32px;
+    border-radius: 10px;
+    gap: 16px;
+}
+  
+span {
+    color: #8b8b8b;
+    font-size: 20px;
+    font-family: "Montserrat", normal;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+  
+p {
+    font-weight: 600;
+    font-size: 40px;
+    color: #424436;
+    margin-top: 16px;
+}
+  
+a{
+    text-decoration: none;
+    color: #424436;
+}
+ 
+.socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+  
+  
+.icon {
+    width: 40px;
+    height: 40px;
+    color: #424436;;
+}
+  
+  
+.mapContainer {
+    margin-top: 32px;
+    margin: 0 auto;
+  
 }
