@@ -1,4 +1,5 @@
 import Footer from './components/Footer';
+import Header from './components/Header';
 import DiscountForm from './components/DiscountForm';
 import { useEffect } from "react";
 import "./App.css";
@@ -7,6 +8,7 @@ import { getAllCategories } from "./requests/categories";
 import CategoriesContainer from "./components/CategoriesContainer";
 import { getAllProducts } from "./requests/products";
 import ProductsSaleContainer from "./components/ProductsSaleContainer";
+import Home from './components/Home';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +20,8 @@ function App() {
             
   return (
     <div>
+      <Header />
+      <Home />
       <CategoriesContainer />
       <DiscountForm />
       <ProductsSaleContainer />

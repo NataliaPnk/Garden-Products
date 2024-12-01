@@ -1,0 +1,29 @@
+
+.home {
+    position: relative;
+}
+
+
+.home > div > h1{
+    color: #fff;
+    font-size: 96px;
+    font-weight: 700;
+    top: 60px;
+    left: 30px;
+
+    position: absolute;
+}
+
+.home button{
+    width: 218px;
+    height: 58px;
+    background-color: #92A134;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    top: 400px;
+    left: 30px;
+
+    position: absolute;
+}
