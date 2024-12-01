@@ -14,10 +14,10 @@ export default function Header() {
           <button>1 day discount</button>
           </div>
           <nav>
-           <Link className={s.link}>Main Page </Link>
-           <Link className={s.link}>Categories</Link>
-           <Link className={s.link}>All products</Link>
-           <Link className={s.link}>All sales</Link>
+           <Link to='/'>Main Page </Link>
+           <Link to='/all_categories'>Categories</Link>
+           <Link to='/all_products'>All products</Link>
+           <Link to='/all_sales'>All sales</Link>
        </nav>
         </div>
     

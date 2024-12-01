@@ -1,29 +1,39 @@
-
 .home {
-    position: relative;
+  position: relative;
 }
 
+.home > div > h1 {
+  color: #fff;
+  font-size: 96px;
+  font-weight: 700;
+  top: 60px;
+  left: 30px;
 
-.home > div > h1{
-    color: #fff;
-    font-size: 96px;
-    font-weight: 700;
-    top: 60px;
-    left: 30px;
-
-    position: absolute;
+  position: absolute;
 }
 
-.home button{
-    width: 218px;
-    height: 58px;
-    background-color: #92A134;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    font-size: 20px;
-    top: 400px;
-    left: 30px;
+.home button {
+  width: 218px;
+  height: 58px;
+  background-color: #92a134;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 20px;
+  top: 320px;
+  left: 30px;
 
-    position: absolute;
+  position: absolute;
+  transition: background-color 0.3s ease;
+}
+
+.home button:hover {
+  background-color: rgb(250, 250, 232);
+  color: #424436;
+}
+
+.home > div > img {
+  width: 100%;
+  max-width: 1500px;
+  object-fit: contain;
 }

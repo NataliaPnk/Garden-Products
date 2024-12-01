@@ -1,31 +1,30 @@
-import Footer from './components/Footer';
-import Header from './components/Header';
-import DiscountForm from './components/DiscountForm';
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import { useEffect } from "react";
 import "./App.css";
 import { useDispatch } from "react-redux";
 import { getAllCategories } from "./requests/categories";
-import CategoriesContainer from "./components/CategoriesContainer";
 import { getAllProducts } from "./requests/products";
-import ProductsSaleContainer from "./components/ProductsSaleContainer";
-import Home from './components/Home';
+import MainPage from "./pages/MainPage";
+import { Route, Routes } from "react-router-dom";
+import AllCategoriesPage from "./pages/AllCategoriesPage";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-  dispatch(getAllProducts(), [])
-  dispatch(getAllCategories(), [])
-  })
-            
+    dispatch(getAllProducts(), []);
+    dispatch(getAllCategories(), []);
+  });
+
   return (
     <div>
       <Header />
-      <Home />
-      <CategoriesContainer />
-      <DiscountForm />
-      <ProductsSaleContainer />
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/all_categories" element={<AllCategoriesPage />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

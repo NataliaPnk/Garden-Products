@@ -1,56 +1,56 @@
-.header{
-    width: 1440px;
-    height: 128px;
-    border-bottom: 1px;
+.header {
+  width: 100%;
+  max-width: 1500px;
+  min-height: 128px;
+  padding: 0 40px;
+  border-bottom: solid 1px rgba(221, 221, 221, 1);
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fffff1;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fffff1;
 }
 
-.header > div:first-child{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.header > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.header > div:last-child{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.header > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.header > div > div{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+.header > div > div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.header > div > div >button{
-    background-color: #92a134;
-    width: 119px;
-    height: 20px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-
+.header > div > div > button {
+  background-color: #92a134;
+  width: 119px;
+  height: 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }
 
-.header > div > nav{
-    display: flex;
-    justify-content: space-around;
-    gap: 32px;
-    font-size: 20px;
-    font-weight: 500;
+.header > div > nav {
+  display: flex;
+  justify-content: space-around;
+  gap: 32px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
-.link{
-    color: #424436;
+.link {
+  color: #424436;
 }
 
-.link:hover{
-    color: black;
-    cursor: pointer;
+.link:hover {
+  color: black;
+  cursor: pointer;
 }
