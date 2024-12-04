@@ -12,7 +12,7 @@ export default function ProductCard({
 }) {
   return (
     <div className={s.card}>
-      <img src={image} />
+      <img src={`http://localhost:3333${image}`} />
       <div>
         <FiHeart />
         <HiOutlineShoppingBag />

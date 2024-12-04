@@ -8,6 +8,7 @@ import { getAllProducts } from "./requests/products";
 import MainPage from "./pages/MainPage";
 import { Route, Routes } from "react-router-dom";
 import AllCategoriesPage from "./pages/AllCategoriesPage";
+import ProductsByCategoryPage from "./pages/ProductsByCategoryPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,10 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/all_categories" element={<AllCategoriesPage />} />
+        <Route
+          path="/categories/:category_name"
+          element={<ProductsByCategoryPage />}
+        />
       </Routes>
       <Footer />
     </div>
