@@ -35,7 +35,6 @@
 span {
   color: #8b8b8b;
   font-size: 20px;
-  font-family: "Montserrat", normal;
   margin-bottom: 10px;
   font-weight: 500;
 }
@@ -48,7 +47,6 @@ p {
 }
 
 a {
-  text-decoration: none;
   color: #424436;
 }
 
