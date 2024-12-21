@@ -2,6 +2,7 @@ import React from "react";
 import s from "../ProductCard/index.module.css";
 import { FiHeart } from "react-icons/fi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 export default function ProductCard({
   id,
@@ -12,7 +13,7 @@ export default function ProductCard({
 }) {
   return (
     <div className={s.card}>
-      <img src={`http://localhost:3333${image}`} />
+      <Link to={`/products/${id}`}><img src={`http://localhost:3333${image}`} /> </Link>
       <div>
         <FiHeart />
         <HiOutlineShoppingBag />

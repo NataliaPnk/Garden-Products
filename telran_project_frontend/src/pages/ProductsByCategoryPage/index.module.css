@@ -4,3 +4,27 @@
   gap: 32px;
 }
 
+.filterContainer{
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  color: #424436;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Montserrat';
+}
+
+.filterContainer > input{
+  width: 112px;
+  height: 36px;
+  border: 1px solid #DDDDDD;
+  padding: 8px 16px;
+  gap: 10px;
+
+  display: flex;
+  text-align: center;
+}
+
+.filterContainer > select{
+  color: gray;
+}
