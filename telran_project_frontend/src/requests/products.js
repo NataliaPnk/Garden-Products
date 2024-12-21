@@ -15,3 +15,4 @@ export const getAllProducts = () => (dispatch) => {
       console.error("Error fetching products:", error);
     });
 };
+          

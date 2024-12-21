@@ -14,7 +14,7 @@ export default function ProductsSaleContainer() {
       <div>
         <h2>Sale</h2>
         <div></div>
-        <Link>All sales</Link>
+        <Link to='/all_sales'>All sales</Link>
       </div>
 
       <div>

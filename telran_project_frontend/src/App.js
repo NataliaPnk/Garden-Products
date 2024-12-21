@@ -8,6 +8,7 @@ import { getAllProducts } from "./requests/products";
 import MainPage from "./pages/MainPage";
 import { Route, Routes } from "react-router-dom";
 import AllCategoriesPage from "./pages/AllCategoriesPage";
+import AllSalesPage from "./pages/AllSalesPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/all_categories" element={<AllCategoriesPage />} />
+        <Route path="/all_sales" element={<AllSalesPage/>}/>
       </Routes>
       <Footer />
     </div>
