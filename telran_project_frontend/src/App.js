@@ -9,6 +9,7 @@ import MainPage from "./pages/MainPage";
 import { Route, Routes } from "react-router-dom";
 import AllCategoriesPage from "./pages/AllCategoriesPage";
 import AllSalesPage from "./pages/AllSalesPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/all_categories" element={<AllCategoriesPage />} />
         <Route path="/all_sales" element={<AllSalesPage/>}/>
+        <Route path='*' element={<NotFoundPage/>}></Route>
       </Routes>
       <Footer />
     </div>
