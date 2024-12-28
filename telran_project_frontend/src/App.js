@@ -10,6 +10,7 @@ import { Route, Routes } from "react-router-dom";
 import AllCategoriesPage from "./pages/AllCategoriesPage";
 import ProductsByCategoryPage from "./pages/ProductsByCategoryPage";
 import ProductPage from "./pages/ProductPage";
+import AllSalesPage from "./pages/AllSalesPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function App() {
           element={<ProductsByCategoryPage />}
         />
         <Route path="/products/:product_id" element={<ProductPage />} />
+        <Route path="/all_sales" element={<AllSalesPage/>}/>
       </Routes>
       <Footer />
     </div>
