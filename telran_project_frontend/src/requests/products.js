@@ -1,5 +1,5 @@
 import { loadProductsByCategoryAction } from "../store/reducers/productsByCategoryReducer";
-import { loadAllProductsAction, loadProductAction } from "../store/reducers/productsReducer";
+import { loadAllProductsAction } from "../store/reducers/productsReducer";
 
 export const getAllProducts = () => (dispatch) => {
   fetch("http://localhost:3333/products/all")
@@ -27,7 +27,7 @@ export const getProduct = (product_id) => {
   return (dispatch) => {
     fetch(`http://localhost:3333/products/${product_id}`)
       .then((res) => res.json())
-      .then((json) => dispatch(loadProductAction(json)))
+      .then((json) => dispatch(loadAllProductsAction(json)))
       .catch((error) => {
         console.error("Error fetching product:", error);
   })

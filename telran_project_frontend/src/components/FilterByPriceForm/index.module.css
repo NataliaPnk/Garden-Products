@@ -1,0 +1,17 @@
+.price_filter input {
+    width: 112px;
+    height: 36px;
+    text-align: center;
+    color: #8B8B8B;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+}
+.price_filter input + input{
+    margin-left: 16px;
+}
+.price_filter span{
+    color: #424436;
+    font-weight: 600;
+    font-size: 20px;
+    margin-right: 16px;
+}
