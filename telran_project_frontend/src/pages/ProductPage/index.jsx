@@ -17,7 +17,7 @@ export default function ProductPage() {
   );
 
   useEffect(() => {dispatch(getProduct(product_id))}, []);
-  console.log(productState);
+  //console.log(productState);
 
   const product = productState || [];
 
