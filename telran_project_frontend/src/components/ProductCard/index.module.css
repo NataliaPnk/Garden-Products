@@ -15,7 +15,7 @@
   transform: scale(1.05);
 }
 
- img {
+.card img {
   width: 100%;
   height: auto;
   aspect-ratio: 1;
@@ -23,7 +23,7 @@
   border-bottom: 1px solid #ddd;
 }
 
-.card > a > div:first-of-type {
+.card > div:first-of-type {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -32,7 +32,7 @@
   gap: 10px;
 }
 
-.card > a > div:first-of-type > svg {
+.card > div:first-of-type > svg {
   width: 48px;
   height: 48px;
   cursor: pointer;
@@ -41,37 +41,37 @@
   transition: transform 0.3s ease, fill 0.3s ease;
 }
 
-.card > a > div:first-of-type > svg:hover {
+.card > div:first-of-type > svg:hover {
   transform: scale(1.1);
 }
 
-.card > a > div:last-of-type {
+.card > div:nth-of-type(2)  {
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 0 32px 32px 32px;
 }
 
-.card > a > div:last-of-type > p {
+.card > div:nth-of-type(2) > p {
   font-size: 20px;
   font-weight: 500;
   color: rgba(66, 68, 54, 1);
   line-height: 26px;
 }
 
-.card > a > div:last-of-type > div {
+.card > div:nth-of-type(2) > div {
   display: flex;
   gap: 16px;
   align-items: center;
 }
 
-.card > a > div:last-of-type > div > p {
+.card > div:nth-of-type(2) > div > p {
   font-size: 40px;
   font-weight: 600;
   color: rgba(66, 68, 54, 1);
 }
 
-.card > a > div:last-of-type > div > span {
+.card > div:nth-of-type(2) > div > span {
   font-size: 20px;
   font-weight: 500;
   color: rgba(139, 139, 139, 1);
