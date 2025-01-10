@@ -47,7 +47,7 @@ export default function ProductCard({
           <p>{title}</p>
           <div>
             <p>${price}</p>
-            <span>${discont_price}</span>
+            { discont_price ? <span>${discont_price}</span> : null } 
           </div>
         </div>
       </Link>

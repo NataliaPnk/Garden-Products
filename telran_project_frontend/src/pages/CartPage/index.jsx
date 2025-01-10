@@ -7,6 +7,8 @@ import OrderDetailsForm from "../../components/OrderDetailsForm";
 export default function CartPage({ count }) {
   const cartState = useSelector((store) => store.cart);
 
+//console.log(cartState);
+
   return (
     <div>
       {cartState.length === 0 ? (

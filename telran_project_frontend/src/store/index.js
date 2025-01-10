@@ -4,13 +4,14 @@ import { categoriesReducer } from "./reducers/categoriesReducer";
 import { productsReducer } from "./reducers/productsReducer";
 import { productsByCategoryReducer } from "./reducers/productsByCategoryReducer";
 import { cartReducer } from "./reducers/cartReducer";
+import { singleProductReducer } from "./reducers/singleProductReducer";
 
 
 const rootReducer = combineReducers({
   categories: categoriesReducer,
   products: productsReducer,
   productsByCategory: productsByCategoryReducer,
-  product: productsReducer,
+  singleProduct: singleProductReducer,
   cart: cartReducer
 });
 

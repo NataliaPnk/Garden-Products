@@ -2,7 +2,6 @@ const ADD_TO_CART = "ADD_TO_CART";
 const DELETE_FROM_CART = "DELETE_FROM_CART";
 const INCR_CART = "INCR_CART";
 const DECR_CART = "DECR_CART";
-const CLEAR_CART = "CLEAR_CART";
 
 export const addToCartAction = (product) => ({
   type: ADD_TO_CART,
