@@ -8,6 +8,7 @@ import {
   deleteFromCartAction,
 } from "../../store/reducers/cartReducer";
 import { useDispatch, useSelector } from "react-redux";
+import { addToFavoriteAction } from "../../store/reducers/favoriteReducer";
 
 export default function ProductCard({
   id,
@@ -21,9 +22,18 @@ export default function ProductCard({
   const cartState = useSelector((store) => store.cart);
   const isInCart = cartState.find((el) => el.id === id);
 
+  const favoriteState = useSelector(store => store.favoriteProducts);
+  const isFavorite = favoriteState.find(el => el.id === id)
+
+
   const cartIconStyle = {
     color: isInCart ? "red" : "green",
   };
+
+  const heartStyles = {
+    fill : isFavorite ? '#92A134' : '',
+    stroke: isFavorite ? '#92A134' : ''
+   }
 
   const handleToggle = (e) => {
     e.stopPropagation();
@@ -37,9 +47,10 @@ export default function ProductCard({
   return (
     <div className={s.card}>
       <Link to={`/products/${id}`}>
-        <img src={`http://localhost:3333${image}`} />
+        <img src={`http://localhost:3333${image}`} />   
+      </Link>            
         <div>
-          <FiHeart />
+          <FiHeart onClick={() => dispatch(addToFavoriteAction({  id, image, title, price, discont_price}))} style={heartStyles}/>
           <HiOutlineShoppingBag style={cartIconStyle} onClick={handleToggle} />
         </div>
 
@@ -50,7 +61,7 @@ export default function ProductCard({
             <span>${discont_price}</span>
           </div>
         </div>
-      </Link>
+
       <div
         onClick={() =>
           dispatch(addToCartAction({ id, image, title, price, discont_price }))
