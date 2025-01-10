@@ -1,6 +1,6 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { useDispatch } from "react-redux";
 import { getAllCategories } from "./requests/categories";
@@ -12,9 +12,13 @@ import ProductsByCategoryPage from "./pages/ProductsByCategoryPage";
 import ProductPage from "./pages/ProductPage";
 import AllSalesPage from "./pages/AllSalesPage";
 import CartPage from "./pages/CartPage";
-import FavoriteProductsPage from "./pages/FavoriteProductsPage";
+import FavoriteProductsPage from "./pages/FavoriteProductsPage"
+import { Context } from "./context";
+//import FeedbackWindow from "./components/FeedbackWindow";
 
 function App() {
+  const [feedbackActive, setFeedbackActive] = useState(true);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,20 +28,23 @@ function App() {
 
   return (
     <div>
-      <Header />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/all_categories" element={<AllCategoriesPage />} />
-        <Route
-          path="/categories/:category_name"
-          element={<ProductsByCategoryPage />}
-        />
-        <Route path="/products/:product_id" element={<ProductPage />} />
-        <Route path="/all_sales" element={<AllSalesPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/favorite_products" element={<FavoriteProductsPage/>}/>
-      </Routes>
-      <Footer />
+      <Context.Provider value={{ feedbackActive, setFeedbackActive }}>
+        {/* <FeedbackWindow /> */}
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/all_categories" element={<AllCategoriesPage />} />
+          <Route
+            path="/categories/:category_name"
+            element={<ProductsByCategoryPage />}
+          />
+          <Route path="/products/:product_id" element={<ProductPage />} />
+          <Route path="/all_sales" element={<AllSalesPage />} />
+          <Route path="/cart" element={<CartPage />} />
+           <Route path="/favorite_products" element={<FavoriteProductsPage/>}/>
+        </Routes>
+        <Footer />
+      </Context.Provider>
     </div>
   );
 }

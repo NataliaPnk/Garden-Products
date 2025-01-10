@@ -24,8 +24,6 @@ export const decrCartAction = (product_id) => ({
   payload: product_id,
 });
 
-export const clearCartAction = () => ({ type: CLEAR_CART });
-
 const checkProduct = (state, payload) => {
   const targetProduct = state.find((el) => el.id === payload.id);
 
@@ -64,8 +62,6 @@ export const cartReducer = (state = [], action) => {
       targetProduct.count--;
       return [...state];
     }
-  } else if (action.type === CLEAR_CART) {
-    return [];
   }
 
   return state;
