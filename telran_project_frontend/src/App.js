@@ -11,6 +11,7 @@ import AllCategoriesPage from "./pages/AllCategoriesPage";
 import ProductsByCategoryPage from "./pages/ProductsByCategoryPage";
 import AllSalesPage from "./pages/AllSalesPage";
 import CartPage from "./pages/CartPage";
+import FavoriteProductsPage from "./pages/FavoriteProductsPage"
 import { Context } from "./context";
 import SingleProductPage from "./pages/SingleProductPage";
 //import FeedbackWindow from "./components/FeedbackWindow";
@@ -40,6 +41,7 @@ function App() {
           <Route path="/products/:product_id" element={<SingleProductPage />} />
           <Route path="/all_sales" element={<AllSalesPage />} />
           <Route path="/cart" element={<CartPage />} />
+           <Route path="/favorite_products" element={<FavoriteProductsPage/>}/>
         </Routes>
         <Footer />
       </Context.Provider>
