@@ -46,13 +46,12 @@
   font-weight: 500;
 }
 
-.link {
+.header > div > nav > a {
   color: #424436;
 }
 
-.link:hover {
-  color: black;
-  cursor: pointer;
+.header > div > nav > a:hover {
+  color: #92a134;
 }
 
 .icons {

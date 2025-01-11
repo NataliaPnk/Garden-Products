@@ -9,6 +9,8 @@ import {
 } from "../../store/reducers/singleProductReducer";
 import s from "../SingleProductPage/index.module.css";
 import { FiHeart } from "react-icons/fi";
+import { addToCartAction } from "../../store/reducers/cartReducer";
+import { addToFavoriteAction } from "../../store/reducers/favoriteReducer";
 
 export default function SingleProductPage() {
   const dispatch = useDispatch();
@@ -32,6 +34,15 @@ export default function SingleProductPage() {
 
   const { id, image, title, price, discont_price, description, count } =
     singleProductState.state;
+
+  const favoriteState = useSelector((store) => store.favoriteProducts);
+
+  const isFavorite = favoriteState.find((el) => el.id === id);
+
+  const heartStyles = {
+    fill: isFavorite ? "#92A134" : "",
+    stroke: isFavorite ? "#92A134" : "",
+  };
 
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const maxDescriptionLength = 270;
@@ -62,7 +73,20 @@ export default function SingleProductPage() {
               <div className={s.title_price_part}>
                 <div>
                   <h3>{title}</h3>
-                  <FiHeart />
+                  <FiHeart
+                    onClick={() =>
+                      dispatch(
+                        addToFavoriteAction({
+                          id,
+                          image,
+                          title,
+                          price,
+                          discont_price,
+                        })
+                      )
+                    }
+                    style={heartStyles}
+                  />
                 </div>
                 <div>
                   <p>${price}</p>
@@ -87,7 +111,22 @@ export default function SingleProductPage() {
                     +
                   </button>
                 </div>
-                <button>Add to cart</button>
+                <button
+                  onClick={() =>
+                    dispatch(
+                      addToCartAction({
+                        id,
+                        image,
+                        title,
+                        price,
+                        discont_price,
+                        count,
+                      })
+                    )
+                  }
+                >
+                  Add to cart
+                </button>
               </div>
 
               <div className={s.description_part}>

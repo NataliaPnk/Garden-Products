@@ -1,7 +1,7 @@
 import React from "react";
 import s from "../ProductCard/index.module.css";
 import { FiHeart } from "react-icons/fi";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { LuShoppingCart } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import {
   addToCartAction,
@@ -22,20 +22,21 @@ export default function ProductCard({
   const cartState = useSelector((store) => store.cart);
   const isInCart = cartState.find((el) => el.id === id);
 
-  const favoriteState = useSelector(store => store.favoriteProducts);
-  const isFavorite = favoriteState.find(el => el.id === id)
-
+  const favoriteState = useSelector((store) => store.favoriteProducts);
+  const isFavorite = favoriteState.find((el) => el.id === id);
 
   const cartIconStyle = {
-    color: isInCart ? "red" : "green",
+    fill: isInCart ? "#92A134" : "",
+    stroke: isInCart ? "#92A134" : "",
+    transform: "scaleX(-1)",
   };
 
   const heartStyles = {
-    fill : isFavorite ? '#92A134' : '',
-    stroke: isFavorite ? '#92A134' : ''
-   }
+    fill: isFavorite ? "#92A134" : "",
+    stroke: isFavorite ? "#92A134" : "",
+  };
 
-  const handleToggle = (e) => {
+  const handleCartToggle = (e) => {
     e.stopPropagation();
     dispatch(
       isInCart
@@ -47,20 +48,27 @@ export default function ProductCard({
   return (
     <div className={s.card}>
       <Link to={`/products/${id}`}>
-        <img src={`http://localhost:3333${image}`} />   
-      </Link>            
-        <div>
-          <FiHeart onClick={() => dispatch(addToFavoriteAction({  id, image, title, price, discont_price}))} style={heartStyles}/>
-          <HiOutlineShoppingBag style={cartIconStyle} onClick={handleToggle} />
-        </div>
+        <img src={`http://localhost:3333${image}`} />
+      </Link>
+      <div>
+        <FiHeart
+          onClick={() =>
+            dispatch(
+              addToFavoriteAction({ id, image, title, price, discont_price })
+            )
+          }
+          style={heartStyles}
+        />
+        <LuShoppingCart style={cartIconStyle} onClick={handleCartToggle} />
+      </div>
 
+      <div>
+        <p>{title}</p>
         <div>
-          <p>{title}</p>
-          <div>
-            <p>${price}</p>
-            { discont_price ? <span>${discont_price}</span> : null } 
-          </div>
+          <p>${price}</p>
+          {discont_price ? <span>${discont_price}</span> : null}
         </div>
+      </div>
 
       <div
         onClick={() =>

@@ -43,9 +43,11 @@
 
 .card > div:first-of-type > svg:hover {
   transform: scale(1.1);
+  fill: rgba(66, 68, 54, 1);
+  stroke: rgba(66, 68, 54, 1);
 }
 
-.card > div:nth-of-type(2)  {
+.card > div:nth-of-type(2) {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -77,4 +79,22 @@
   color: rgba(139, 139, 139, 1);
   text-decoration: line-through;
   margin-top: 35px;
+}
+
+.card > div:last-of-type {
+  position: absolute;
+  width: fit-content;
+  padding: 10px 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  color: white;
+  background-color: #92a134;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card:hover > div:last-of-type {
+  visibility: visible;
 }
