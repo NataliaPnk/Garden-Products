@@ -63,3 +63,10 @@
   font-weight: 600;
   color: white;
 }
+
+.cartWrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 32px;
+  justify-content: space-between;
+}
