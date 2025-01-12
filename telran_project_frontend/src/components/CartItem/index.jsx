@@ -6,6 +6,7 @@ import {
   deleteFromCartAction,
   incrCartAction,
 } from "../../store/reducers/cartReducer";
+import s from "../CartItem/index.module.css";
 
 export default function CartItem({
   id,
@@ -18,19 +19,28 @@ export default function CartItem({
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <img src={image} alt={title} />
-      <p>{title}</p>
-      <p>{price * count}$</p>
-      <span>{discont_price * count}</span>
+    <div className={s.item}>
+      <img src={`http://localhost:3333${image}`} alt={title} />
 
       <div>
-        <button onClick={() => dispatch(decrCartAction(id))}>-</button>
-        <p>{count}</p>
-        <button onClick={() => dispatch(incrCartAction(id))}>+</button>
-      </div>
+        <div>
+          <p>{title}</p>
+          <RxCross2 onClick={() => dispatch(deleteFromCartAction(id))} />
+        </div>
 
-      <RxCross2 onClick={() => dispatch(deleteFromCartAction(id))} />
+        <div>
+          <div>
+            <button onClick={() => dispatch(decrCartAction(id))}>-</button>
+            <div>{count}</div>
+            <button onClick={() => dispatch(incrCartAction(id))}>+</button>
+          </div>
+
+          <div>
+            <p>${price * count}</p>
+            {discont_price ? <span>${discont_price * count}</span> : null}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
