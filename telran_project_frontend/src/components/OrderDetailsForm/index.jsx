@@ -1,26 +1,31 @@
 import React, { useContext } from "react";
 import { Context } from "../../context";
 import { useSelector } from "react-redux";
+import s from "../OrderDetailsForm/index.module.css";
+import { useForm } from "react-hook-form";
 
-export default function OrderDetailsForm({ count }) {
+export default function OrderDetailsForm() {
   const { setFeedbackActive } = useContext(Context);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
   const cartState = useSelector((store) => store.cart);
 
-  const total = cartState
+  const totalPrice = cartState
     .reduce((acc, el) => acc + el.price * el.count, 0)
     .toFixed(2);
 
-  const submit = (e) => {
-    e.preventDefault();
+  const totalItems = cartState.reduce((acc, el) => acc + el.count, 0);
 
-    const { name, phone, email } = e.target;
-
+  const submit = (data) => {
     const newPurchase = {
-      name: name.value,
-      phone: phone.value,
-      email: email.value,
-      totalPrice: +total,
+      ...data,
+      total: +totalPrice,
       cart: cartState,
     };
 
@@ -28,18 +33,52 @@ export default function OrderDetailsForm({ count }) {
 
     console.log(newPurchase);
 
-    e.target.reset();
+    reset();
   };
 
-  return (
-    <form onSubmit={submit}>
-      <h2>Order details</h2>
-      <p>{count} items</p>
-      <p>Total {total}</p>
+  const nameRegister = register("name", {
+    required: "The name field must be filled out.",
+    minLength: 3,
+  });
 
-      <input type="text" placeholder="Name" name="name" />
-      <input type="text" placeholder="Phone Number" name="phone" />
-      <input type="email" placeholder="Email" name="email" />
+  const phoneRegister = register("phone", {
+    required: "The phone field must be filled out.",
+    pattern: {
+      value: /^[1-9]\d{2,12}$/,
+      message:
+        "*The phone number must include the country code followed by 10 digits.",
+    },
+  });
+
+  const emailRegister = register("email", {
+    required: "The email field must be filled out.",
+    pattern: {
+      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      message: "*Please enter a valid email address format",
+    },
+  });
+
+  return (
+    <form className={s.form} onSubmit={handleSubmit(submit)}>
+      <h3>Order details</h3>
+      <div>
+        <p>
+          {" "}
+          {totalItems} {totalItems === 1 ? "item" : "items"}
+        </p>
+        <div>
+          <p>Total</p>
+          <span>${totalPrice}</span>
+        </div>
+      </div>
+      <div>
+        <input type="text" placeholder="Name" {...nameRegister} />
+        {errors.name && <p>{errors.name.message}</p>}
+        <input type="text" placeholder="Phone Number" {...phoneRegister} />
+        {errors.phone && <p>{errors.phone.message}</p>}
+        <input type="email" placeholder="Email" {...emailRegister} />
+        {errors.email && <p>{errors.email.message}</p>}
+      </div>
       <button>Order</button>
     </form>
   );

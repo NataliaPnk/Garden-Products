@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 import OrderDetailsForm from "../../components/OrderDetailsForm";
 import s from "../CartPage/index.module.css";
 
-export default function CartPage({ count }) {
+export default function CartPage() {
   const cartState = useSelector((store) => store.cart);
-
-  //console.log(cartState);
 
   return (
     <section className={s.cart}>
@@ -27,9 +25,9 @@ export default function CartPage({ count }) {
           </button>
         </div>
       ) : (
-        <div>
+        <div className={s.cartWrapper}>
           <CartContainer />
-          <OrderDetailsForm count={count} />
+          <OrderDetailsForm />
         </div>
       )}
     </section>

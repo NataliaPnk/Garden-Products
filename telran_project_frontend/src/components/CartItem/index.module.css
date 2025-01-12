@@ -1,6 +1,5 @@
 .item {
-  max-width: 780px;
-  width: 100%;
+  min-height: 180px;
   display: flex;
   gap: 32px;
   border: 1px solid rgba(221, 221, 221, 1);
@@ -11,7 +10,6 @@
 
 .item > img {
   max-width: 200px;
-  height: 100%;
   object-fit: contain;
   border-radius: 12px 0 0 12px;
   flex-shrink: 0;
@@ -46,7 +44,6 @@
 
 .item > div > div:last-of-type {
   display: flex;
-  width: 100%;
   gap: 32px;
   align-items: center;
 }
