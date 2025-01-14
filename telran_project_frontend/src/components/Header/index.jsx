@@ -4,6 +4,7 @@ import s from "./index.module.css";
 import { SlHeart } from "react-icons/sl";
 import { FiHeart } from "react-icons/fi";
 import { useSelector } from "react-redux";
+import DarkMode from "../DarkMode";
 
 
 export default function Header() {
@@ -15,7 +16,7 @@ export default function Header() {
     <header className={s.header}>
       <div>
         <img src="./media/logo.png" alt="logo" />
-        <img src="./media/mode.png" alt="mode" />
+        <DarkMode/>
       </div>
       <div>
         <div>

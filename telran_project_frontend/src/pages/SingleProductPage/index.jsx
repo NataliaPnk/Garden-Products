@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { getSingleProduct } from "../../requests/products";
 import {
   changeStatusSingleProductAction,
@@ -12,6 +12,7 @@ import { FiHeart } from "react-icons/fi";
 
 export default function SingleProductPage() {
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const { product_id } = useParams();
 
@@ -30,6 +31,7 @@ export default function SingleProductPage() {
 
   const name = productsByCategoryState.category || {};
 
+
   const { id, image, title, price, discont_price, description, count } =
     singleProductState.state;
 
@@ -47,13 +49,17 @@ export default function SingleProductPage() {
       ) : (
         <div>
           <div className={s.navigation}>
-            <Link to="/">Main Page</Link>
+            <Link to="/" className={location.pathname === '/' ? `${s.link} ${s.active}` : s.link}
+            >Main Page</Link>
             <div></div>
-            <Link to="/all_categories">Categories</Link>
+            <Link to="/all_categories" className={location.pathname === '/all_categories' ? `${s.link} ${s.active}` : s.link}
+            >Categories</Link>
             <div></div>
-            <Link to={`/categories/${name.title}`}>{name.title}</Link>
+            <Link to= {`/categories/${name.title}`} className={location.pathname === `/categories/${name.title}` ? `${s.link} ${s.active}` : s.link}
+            >{name.title}</Link>
             <div></div>
-            <Link to={`/products/${id}`}>{title}</Link>
+            <Link to={`/products/${id}`} className={location.pathname === `/products/${id}` ? `${s.link} ${s.active}` : s.link}
+            >{title}</Link>
           </div>
 
           <div className={s.singleCard}>

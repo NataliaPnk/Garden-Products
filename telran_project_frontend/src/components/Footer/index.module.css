@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1500px;
   padding: 80px 40px;
-  background-color: #fffff1;
+  background-color: var(--background-color);
   margin: 0 auto;
 }
 
@@ -17,7 +17,7 @@
 .bigItem {
   flex: 780;
   margin-bottom: 12px;
-  background-color: #f2f6d3;
+  background-color:var(--background-color-item);
   padding: 32px;
   border-radius: 10px;
   gap: 16px;
@@ -26,7 +26,7 @@
 .smallItem {
   flex: 548;
   margin-bottom: 12px;
-  background-color: #f2f6d3;
+  background-color: var(--background-color-item);
   padding: 32px;
   border-radius: 10px;
   gap: 16px;
@@ -42,12 +42,12 @@ span {
 p {
   font-weight: 600;
   font-size: 40px;
-  color: #424436;
+  color: var(--text-color);
   margin-top: 16px;
 }
 
 a {
-  color: #424436;
+  color: var(--text-color);
 }
 
 .socials {
@@ -59,7 +59,7 @@ a {
 .icon {
   width: 40px;
   height: 40px;
-  color: #424436;
+  color: var(--text-color);
 }
 
 .mapContainer {

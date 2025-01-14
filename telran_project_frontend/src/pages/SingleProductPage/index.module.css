@@ -3,7 +3,7 @@
 }
 
 .navigation > a {
-  background-color: rgb(250, 250, 232);
+  background-color: var(--background-color);
   color: rgba(139, 139, 139, 1);
   font-size: 16px;
   font-weight: 500;
@@ -17,6 +17,10 @@
 .navigation > a:hover {
   background-color: #f3f7d6;
   color: #424436;
+}
+
+.active {
+  color: var(--active-text-color)!important;
 }
 
 .navigation > div {
@@ -62,7 +66,7 @@
 .title_price_part > div:first-of-type > h3 {
   font-size: 40px;
   font-weight: 700;
-  color: rgba(66, 68, 54, 1);
+  color: var(--text-color);
 }
 
 .title_price_part > div:first-of-type > svg {
@@ -90,7 +94,7 @@
 .title_price_part > div:last-of-type > p {
   font-size: 64px;
   font-weight: 700;
-  color: #424436;
+  color: var(--text-color);
 }
 
 .title_price_part > div:last-of-type > span {
@@ -164,14 +168,14 @@
 .description_part > h6 {
   font-size: 20px;
   font-weight: 600;
-  color: rgba(66, 68, 54, 1);
+  color:var(--text-color);
 }
 
 .description_part > p {
   font-size: 16px;
   font-weight: 400;
   line-height: 21px;
-  color: rgba(66, 68, 54, 1);
+  color:var(--text-color);
 }
 
 .description_part > button {
@@ -182,6 +186,6 @@
   padding: 0;
   font-size: 16px;
   font-weight: 500;
-  color: rgba(66, 68, 54, 1);
+  color: var(--text-color);
   margin-top: 16px;
 }

@@ -15,15 +15,34 @@ a {
 }
 
 h2 {
-  color: rgba(66, 68, 54, 1);
+  color: var(--text-color);
   font-size: 64px;
   font-weight: 700;
-}
+}         
 
 section {
   width: 100%;
   max-width: 1500px;
-  padding: 80px 40px;
-  background-color: #fffff1;
+  padding: 40px 40px;
+  background-color:var(--background-color);
   margin: 0 auto;
+}
+
+:root {
+  --background-color: #fffff1;
+  --background-color-item:#F2F6D3;
+  --background-color-another:white;
+  --text-color: #424436;
+  --active-text-color-light: black; 
+  --active-text-color-dark: white;
+  --active-text-color: var(--active-text-color-light); 
+}
+
+[ data-theme= 'dark'] {
+  --background-color: #424436;
+  --background-color-item:#383A2C;
+  --background-color-another:#383A2C;
+  --text-color:#FFFFFF;
+  --active-text-color: var(--active-text-color-dark);
+
 }
