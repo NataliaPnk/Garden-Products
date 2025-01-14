@@ -10,7 +10,7 @@
     margin-left: 16px;
 }
 .price_filter span{
-    color: #424436;
+    color: var(--text-color);
     font-weight: 600;
     font-size: 20px;
     margin-right: 16px;
