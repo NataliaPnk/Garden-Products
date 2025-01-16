@@ -41,6 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #DDDDDD;
   
 }
 .filterContainer > input[type="checkbox"]:checked::before {
@@ -50,8 +51,7 @@
 }
 
 .filterContainer > input[type="checkbox"]:checked {
-  background-color: white; /* Цвет фона при отмеченном состоянии */
-  border-color: #4caf50; /* Цвет границы для активного состояния */
+  background-color: white; 
 }
 
 .filterContainer > select{
