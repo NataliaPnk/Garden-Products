@@ -47,7 +47,7 @@
 }
 
 .header > div > nav > a {
-  color: #424436;
+  color:var(--text-color);
 }
 
 .header > div > nav > a:hover {

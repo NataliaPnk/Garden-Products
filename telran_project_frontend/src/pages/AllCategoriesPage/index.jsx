@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import s from "../AllCategoriesPage/index.module.css";
 import CategoryCard from "../../components/CategoryCard";

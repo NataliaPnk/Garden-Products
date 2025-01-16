@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom';
 import s from './index.module.css'
@@ -6,15 +6,22 @@ import SortForm from '../../components/SortForm';
 import FilterByPriceForm from '../../components/FilterByPriceForm';
 import { filterFavoriteProductsAction, sortFavoriteProductsAction } from '../../store/reducers/favoriteReducer';
 import ProductCard from '../../components/ProductCard';
+import Skeleton from '../../components/Skeleton';
 
 
 export default function FavoriteProductsPage() {
 
     const location = useLocation();
+    const [loading, setLoading] = useState(true);
 
     const favoriteState = useSelector((store) =>
         store.favoriteProducts.filter((product) => product.visible !== false)
     );
+
+    useEffect(() => {
+        const timer = setTimeout(() => setLoading(false), 1000);
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
 
@@ -38,7 +45,6 @@ export default function FavoriteProductsPage() {
                 </div>
             )}
 
-
             {favoriteState.length === 0
                 ?
                 <div className={s.emptyTitle}>
@@ -46,14 +52,18 @@ export default function FavoriteProductsPage() {
                     <Link to="/all_products">Go shopping</Link>
                 </div>
                 :
+
                 <div className={s.favorite_products}>
-                    {favoriteState.map((product) => (
-                        <ProductCard key={product.id} {...product} />))}
+                    {
+                        loading ? (
+                            <Skeleton count={11} />
+                        ) : (
+                            favoriteState.map((product) => (
+                                <ProductCard key={product.id} {...product} />))
+                        )
+                    }
                 </div>
-
             }
-
-
         </section>
     )
 }

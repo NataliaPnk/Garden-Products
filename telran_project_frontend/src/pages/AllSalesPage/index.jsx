@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import s from './index.module.css'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,14 +7,20 @@ import { getAllProducts } from '../../requests/products';
 import FilterByPriceForm from '../../components/FilterByPriceForm';
 import SortForm from '../../components/SortForm';
 import { filterByPriceAction, sortAllProductsAction } from '../../store/reducers/productsReducer';
+import Skeleton from '../../components/Skeleton';
 
 export default function AllSalesPage() {
 
   const dispatch = useDispatch();
   const location = useLocation();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(getAllProducts())
+    dispatch(getAllProducts());
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
   }, [dispatch]);
 
   const productsState = useSelector((store) => store.products);
@@ -46,9 +52,13 @@ export default function AllSalesPage() {
       </div>
 
       <div className={s.discounted_products}>
-        {discountedProducts.map((product) => (
-          <ProductCard key={product.id} {...product} />
-        ))}
+        {loading ? (
+          <Skeleton count={11} />
+        ) : (
+          discountedProducts.map((product) => (
+            <ProductCard key={product.id} {...product} />
+          ))
+        )}
       </div>
     </section>
 
