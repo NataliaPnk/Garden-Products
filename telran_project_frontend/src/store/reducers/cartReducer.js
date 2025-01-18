@@ -2,6 +2,7 @@ const ADD_TO_CART = "ADD_TO_CART";
 const DELETE_FROM_CART = "DELETE_FROM_CART";
 const INCR_CART = "INCR_CART";
 const DECR_CART = "DECR_CART";
+const CLEAR_ALL_CART = "CLEAR_ALL_CART";
 
 export const addToCartAction = (product) => ({
   type: ADD_TO_CART,
@@ -21,6 +22,10 @@ export const incrCartAction = (product_id) => ({
 export const decrCartAction = (product_id) => ({
   type: DECR_CART,
   payload: product_id,
+});
+
+export const clearAllFromCartAction = () => ({
+  type: CLEAR_ALL_CART,
 });
 
 const checkProduct = (state, payload) => {
@@ -61,6 +66,8 @@ export const cartReducer = (state = [], action) => {
       targetProduct.count--;
       return [...state];
     }
+  } else if (action.type === CLEAR_ALL_CART) {
+    return [];
   }
 
   return state;
