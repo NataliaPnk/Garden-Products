@@ -11,15 +11,15 @@ import AllCategoriesPage from "./pages/AllCategoriesPage";
 import ProductsByCategoryPage from "./pages/ProductsByCategoryPage";
 import AllSalesPage from "./pages/AllSalesPage";
 import CartPage from "./pages/CartPage";
-import FavoriteProductsPage from "./pages/FavoriteProductsPage"
+import FavoriteProductsPage from "./pages/FavoriteProductsPage";
 import { Context } from "./context";
 import SingleProductPage from "./pages/SingleProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import AllProductsPage from "./pages/AllProductsPage";
-//import FeedbackWindow from "./components/FeedbackWindow";
+import FeedbackWindow from "./components/FeedbackWindow";
 
 function App() {
-  const [feedbackActive, setFeedbackActive] = useState(true);
+  const [feedbackActive, setFeedbackActive] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -31,7 +31,7 @@ function App() {
   return (
     <div>
       <Context.Provider value={{ feedbackActive, setFeedbackActive }}>
-        {/* <FeedbackWindow /> */}
+        <FeedbackWindow />
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
@@ -43,9 +43,9 @@ function App() {
           <Route path="/products/:product_id" element={<SingleProductPage />} />
           <Route path="/all_sales" element={<AllSalesPage />} />
           <Route path="/cart" element={<CartPage />} />
-           <Route path="/favorite_products" element={<FavoriteProductsPage/>}/>
-           <Route path="/all_products" element ={<AllProductsPage/>}/>
-           <Route path='*' element={<NotFoundPage/>}></Route>
+          <Route path="/favorite_products" element={<FavoriteProductsPage />} />
+          <Route path="/all_products" element={<AllProductsPage />} />
+          <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
         <Footer />
       </Context.Provider>

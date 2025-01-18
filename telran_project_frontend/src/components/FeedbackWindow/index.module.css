@@ -1,0 +1,53 @@
+.feedback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(40, 40, 40, 0.4);
+  position: fixed;
+  z-index: 1;
+}
+
+.feedback > div {
+  width: 550px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  border-radius: 12px;
+  background-color: rgba(146, 161, 52, 1);
+}
+
+.feedback > div > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedback > div > div:first-of-type > svg {
+  color: rgba(255, 255, 241, 1);
+  width: 44px;
+  height: 44px;
+  top: 35px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.feedback > div > div:first-of-type > h3 {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.feedback > div > div:last-of-type {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feedback > div > div:last-of-type > p {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 600;
+  font-size: 20px;
+}
