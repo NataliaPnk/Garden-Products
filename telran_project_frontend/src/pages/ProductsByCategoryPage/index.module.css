@@ -34,15 +34,16 @@
   width: 36px;
   height: 36px;
   border-radius: 8px;
+  border: 1px solid #DDDDDD;
   appearance: none;
   background-color: white; 
   cursor: pointer;
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  
+  align-items: center; 
 }
+
 .filterContainer > input[type="checkbox"]:checked::before {
   content: '\2713'; 
   font-size: 24px; 
@@ -50,8 +51,8 @@
 }
 
 .filterContainer > input[type="checkbox"]:checked {
-  background-color: white; /* Цвет фона при отмеченном состоянии */
-  border-color: #4caf50; /* Цвет границы для активного состояния */
+  background-color: white; 
+
 }
 
 .filterContainer > select{

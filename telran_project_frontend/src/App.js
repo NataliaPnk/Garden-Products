@@ -15,6 +15,7 @@ import FavoriteProductsPage from "./pages/FavoriteProductsPage"
 import { Context } from "./context";
 import SingleProductPage from "./pages/SingleProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import AllProductsPage from "./pages/AllProductsPage";
 //import FeedbackWindow from "./components/FeedbackWindow";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/all_sales" element={<AllSalesPage />} />
           <Route path="/cart" element={<CartPage />} />
            <Route path="/favorite_products" element={<FavoriteProductsPage/>}/>
+           <Route path="/all_products" element ={<AllProductsPage/>}/>
            <Route path='*' element={<NotFoundPage/>}></Route>
         </Routes>
         <Footer />
