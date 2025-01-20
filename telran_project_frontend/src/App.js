@@ -17,9 +17,11 @@ import SingleProductPage from "./pages/SingleProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import AllProductsPage from "./pages/AllProductsPage";
 import FeedbackWindow from "./components/FeedbackWindow";
+import DailyDealPopup from "./components/DailyDealPopup";
 
 function App() {
   const [feedbackActive, setFeedbackActive] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -30,8 +32,11 @@ function App() {
 
   return (
     <div>
-      <Context.Provider value={{ feedbackActive, setFeedbackActive }}>
+      <Context.Provider
+        value={{ feedbackActive, setFeedbackActive, showPopup, setShowPopup }}
+      >
         <FeedbackWindow />
+        <DailyDealPopup />
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />

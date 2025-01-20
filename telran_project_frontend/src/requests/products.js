@@ -1,3 +1,4 @@
+import { loadDailyDealAction } from "../store/reducers/dailyDealReducer";
 import { loadProductsByCategoryAction } from "../store/reducers/productsByCategoryReducer";
 import { loadAllProductsAction } from "../store/reducers/productsReducer";
 import { loadSingleProductAction } from "../store/reducers/singleProductReducer";
@@ -29,6 +30,17 @@ export const getSingleProduct = (product_id) => {
     fetch(`http://localhost:3333/products/${product_id}`)
       .then((res) => res.json())
       .then((json) => dispatch(loadSingleProductAction(json)))
+      .catch((error) => {
+        console.error("Error fetching product:", error);
+      });
+  };
+};
+
+export const getDailyDeal = () => {
+  return (dispatch) => {
+    fetch(`http://localhost:3333/random_product`)
+      .then((res) => res.json())
+      .then((json) => dispatch(loadDailyDealAction(json)))
       .catch((error) => {
         console.error("Error fetching product:", error);
       });

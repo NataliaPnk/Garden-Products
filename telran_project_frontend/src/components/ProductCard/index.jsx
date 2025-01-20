@@ -16,6 +16,7 @@ export default function ProductCard({
   title,
   price,
   discont_price,
+  discountPrice,
 }) {
   const dispatch = useDispatch();
 
@@ -64,9 +65,16 @@ export default function ProductCard({
 
       <div>
         <p>{title}</p>
+
         <div>
-          <p>${price}</p>
-          {discont_price ? <span>${discont_price}</span> : null}
+          {discont_price || discountPrice ? (
+            <div>
+              <p>${discont_price || discountPrice.toFixed(2)}</p>{" "}
+              <span>${price}</span>
+            </div>
+          ) : (
+            <p>${price}</p>
+          )}
         </div>
       </div>
 

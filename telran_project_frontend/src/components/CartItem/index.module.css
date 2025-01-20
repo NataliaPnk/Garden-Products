@@ -38,8 +38,8 @@
   color: rgba(66, 68, 54, 1);
   cursor: pointer;
   position: absolute;
-  top: 25%;
-  right: 5%;
+  top: 5%;
+  right: 2%;
 }
 
 .item > div > div:last-of-type {
@@ -75,18 +75,18 @@
   justify-content: center;
 }
 
-.item > div > div:last-of-type > div:last-of-type {
+.item > div > div:last-of-type > div:last-of-type > div {
   display: flex;
   gap: 16px;
 }
 
-.item > div > div:last-of-type > div:last-of-type > p {
+.item > div > div:last-of-type > div:last-of-type > div > p {
   color: rgba(66, 68, 54, 1);
   font-size: 40px;
   font-weight: 600;
 }
 
-.item > div > div:last-of-type > div:last-of-type > span {
+.item > div > div:last-of-type > div:last-of-type > div > span {
   color: rgba(139, 139, 139, 1);
   font-size: 20px;
   font-weight: 500;

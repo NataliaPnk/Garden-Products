@@ -15,6 +15,7 @@ export default function CartItem({
   count,
   price,
   discont_price,
+  discountPrice,
 }) {
   const dispatch = useDispatch();
 
@@ -34,10 +35,15 @@ export default function CartItem({
             <div>{count}</div>
             <button onClick={() => dispatch(incrCartAction(id))}>+</button>
           </div>
-
           <div>
-            <p>${price * count}</p>
-            {discont_price ? <span>${discont_price * count}</span> : null}
+            {discont_price || discountPrice ? (
+              <div>
+                <p>${discont_price || discountPrice.toFixed(2) * count}</p>{" "}
+                <span>${price * count}</span>
+              </div>
+            ) : (
+              <p>${price * count}</p>
+            )}
           </div>
         </div>
       </div>
