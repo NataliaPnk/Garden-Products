@@ -81,7 +81,7 @@ export default function DailyDealPopup() {
           <div>
             <p>{title}</p>
             <div>
-              <p style={{ fontSize: "18px" }}>
+              <p style={{ fontSize: "18px", color: 'rgba(66, 68, 54, 1)' }}>
                 ${discountPrice}{" "}
                 <span
                   style={{ textDecoration: "line-through", fontSize: "16px" }}
