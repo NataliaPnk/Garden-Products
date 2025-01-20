@@ -1,8 +1,8 @@
-.navigation{
+.navigation {
     display: flex;
 }
 
-.navigation  a {
+.navigation a {
     background-color: var(--background-color);
     color: rgba(139, 139, 139, 1);
     font-size: 16px;
@@ -16,10 +16,10 @@
 
 .navigation a:hover {
     background-color: #f3f7d6;
-    color: #424436; 
+    color: #424436;
 }
 
-.navigation > div {
+.navigation>div {
     border-top: 1px solid #DDDDDD;
     width: 16px;
     margin: 18px 0;
@@ -32,7 +32,7 @@
     margin: 0 auto;
 }
 
-.filter_container{
+.filter_container {
     display: inline-flex;
     margin-top: 40px;
     gap: 40px;
@@ -44,6 +44,29 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
 }
+
 .active {
-    color:  var(--active-text-color)!important;
+    color: var(--active-text-color) !important;
+}
+.active:hover{
+    color: var(--text-color-navigation-hover)!important;
+}
+@media (max-width: 1000px) {
+    .all_products {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .all_products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .filter_container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
 }

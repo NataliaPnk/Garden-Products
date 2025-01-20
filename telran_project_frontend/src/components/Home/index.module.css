@@ -33,7 +33,19 @@
 }
 
 .home > div > img {
-  width: 100%;
   max-width: 1500px;
   object-fit: contain;
+}
+@media (max-width: 1000px) {
+  .home > div > img{
+    max-width: 1000px;
+  }
+  .home > div > h1{
+    font-size: 90px;
+  }
+}
+@media (max-width: 768px) {
+  .home > div > h1{
+    font-size: 68px;
+  }
 }

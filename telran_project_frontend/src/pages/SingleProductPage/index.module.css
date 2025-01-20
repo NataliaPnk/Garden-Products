@@ -22,7 +22,9 @@
 .active {
   color: var(--active-text-color)!important;
 }
-
+.active:hover{
+  color: var(--text-color-navigation-hover)!important;
+}
 .navigation > div {
   border-top: 1px solid #dddddd;
   width: 16px;
@@ -45,6 +47,7 @@
 
 .singleCard > div {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   gap: 32px;
   width: 50%;
@@ -84,7 +87,7 @@
 
 .title_price_part > div:first-of-type > svg:hover {
   transform: scale(1.1);
-  fill: rgba(66, 68, 54, 1);
+  fill: var(--fill);
 }
 
 .title_price_part > div:last-of-type {
@@ -140,8 +143,8 @@
 }
 
 .quantity_part > button:hover {
-  background-color: #424436;
-  color: rgb(250, 250, 232);
+  background-color: var(--button-hover);
+  color: var(--text-color-hover);
   transform: scale(1.02);
 }
 
@@ -200,4 +203,45 @@
 
 .description_part > button:hover {
   color: #92a134;
+}
+@media (max-width:1000px) {
+  .singleCard > img {
+    width: 470px;
+    height: 572px;
+  }
+}
+@media (max-width:768px) {
+  .singleCard{
+    gap: 20px;
+  }
+  .singleCard > img {
+    width: 354px;
+    height: 286px;
+  }
+  .singleCard > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .title_price_part{
+    gap: 20px;
+  }
+  .title_price_part > div:first-of-type > h3{
+    font-size: 32px;
+  }
+  .title_price_part > div:last-of-type > p{
+    font-size: 56px;
+  }
+  .title_price_part > div:last-of-type > span{
+    font-size: 32px;
+  }
+ .quantity_part {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+  }
+  .quantity_part > button {
+    width: 354px;
+  }
 }

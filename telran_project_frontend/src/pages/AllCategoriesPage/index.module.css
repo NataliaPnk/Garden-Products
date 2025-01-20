@@ -42,3 +42,25 @@
 .active {
   color:  var(--active-text-color)!important;
 }
+.active:hover{
+  color: var(--text-color-navigation-hover)!important;
+}
+@media (max-width:1000px) {
+  .container{
+    max-width: 1000px;
+  }
+  .wrapper {
+    grid-template-columns: repeat(4,1fr);
+    gap: 26px;
+  }
+}
+@media (max-width: 768px) {
+  .container{
+    max-width: 768px;
+  }
+  .wrapper {
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+  }
+  
+}

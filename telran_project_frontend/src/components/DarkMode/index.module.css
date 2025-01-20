@@ -75,3 +75,9 @@
     margin: 7.5px 7px 7.5px 6px;
     z-index: 1;
 }
+@media (max-width: 768px){
+    
+.dark_mode_label{
+        margin-right: 28.5px;
+    }
+}
