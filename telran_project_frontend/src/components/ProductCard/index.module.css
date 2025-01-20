@@ -61,19 +61,19 @@
   line-height: 26px;
 }
 
-.card > div:nth-of-type(2) > div {
+.card > div:nth-of-type(2) > div > div {
   display: flex;
   gap: 16px;
   align-items: center;
 }
 
-.card > div:nth-of-type(2) > div > p {
+.card > div:nth-of-type(2) > div > div > p {
   font-size: 40px;
   font-weight: 600;
   color: var(--text-color);
 }
 
-.card > div:nth-of-type(2) > div > span {
+.card > div:nth-of-type(2) > div > div > span {
   font-size: 20px;
   font-weight: 500;
   color: rgba(139, 139, 139, 1);

@@ -6,6 +6,7 @@ import { productsByCategoryReducer } from "./reducers/productsByCategoryReducer"
 import { cartReducer } from "./reducers/cartReducer";
 import { singleProductReducer } from "./reducers/singleProductReducer";
 import { favoriteReducer } from "./reducers/favoriteReducer";
+import { dailyDealReducer } from "./reducers/dailyDealReducer";
 
 
 const rootReducer = combineReducers({
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   productsByCategory: productsByCategoryReducer,
   singleProduct: singleProductReducer,
   cart: cartReducer,
-  favoriteProducts: favoriteReducer
+  favoriteProducts: favoriteReducer,
+  deal: dailyDealReducer
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));

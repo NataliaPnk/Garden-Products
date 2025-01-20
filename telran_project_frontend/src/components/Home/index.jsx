@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./index.module.css";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
       </div>
       <div>
         <h1>Amazing Discounts on Garden Products!</h1>
-        <button>Check out</button>
+        <Link to="/all_sales">
+          <button>Check out</button>
+        </Link>
       </div>
     </div>
   );

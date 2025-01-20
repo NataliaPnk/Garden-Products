@@ -16,8 +16,11 @@ export default function OrderDetailsForm() {
 
   const cartState = useSelector((store) => store.cart);
 
-  const totalPrice = cartState
-    .reduce((acc, el) => acc + el.price * el.count, 0)
+  const displayedTotal = cartState
+    .reduce((acc, el) => {
+      const priceToUse = el.discountPrice || el.discont_price || el.price;
+      return acc + priceToUse * el.count;
+    }, 0)
     .toFixed(2);
 
   const totalItems = cartState.reduce((acc, el) => acc + el.count, 0);
@@ -25,7 +28,7 @@ export default function OrderDetailsForm() {
   const submit = (data) => {
     const newPurchase = {
       ...data,
-      total: +totalPrice,
+      total: +displayedTotal,
       cart: cartState,
     };
 
@@ -68,7 +71,7 @@ export default function OrderDetailsForm() {
         </p>
         <div>
           <p>Total</p>
-          <span>${totalPrice}</span>
+          <span>${displayedTotal}</span>
         </div>
       </div>
       <div>

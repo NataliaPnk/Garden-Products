@@ -41,7 +41,10 @@ const checkProduct = (state, payload) => {
     }
   } else {
     if (!payload.count) {
-      return [...state, { ...payload, count: 1 }];
+      return [
+        ...state,
+        { ...payload, count: 1, discountPrice: payload.discountPrice },
+      ];
     } else {
       return [...state, payload];
     }
