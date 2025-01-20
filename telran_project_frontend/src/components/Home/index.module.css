@@ -33,6 +33,7 @@
 }
 
 .home > div > img {
+  width: 100%;
   max-width: 1500px;
   object-fit: contain;
 }
