@@ -135,7 +135,7 @@ export default function SingleProductPage() {
                 </button>
               </div>
 
-              <div className={s.description_part}>
+              <div className={s.description_part} id="description_part">
                 <h6>Description</h6>
                 <p>
                   {isDescriptionExpanded

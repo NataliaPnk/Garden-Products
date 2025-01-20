@@ -30,3 +30,14 @@
 .checkbox input:checked {
   background-color: white; 
 }
+
+@media (max-width: 768px) {
+  .checkbox{
+    display: flex;
+    align-items: center;
+  }
+  .checkbox span {
+    font-size: 20px;
+  }
+ 
+}

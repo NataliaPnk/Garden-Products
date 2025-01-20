@@ -15,3 +15,13 @@
     font-size: 20px;
     margin-right: 16px;
 }
+
+@media (max-width: 768px) {
+    .sort{
+        gap: 16px;
+    }
+    .sort span {
+        font-size: 20px;
+    }
+    
+}

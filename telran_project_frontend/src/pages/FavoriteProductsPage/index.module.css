@@ -78,6 +78,26 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
 }
+.navigation > a:hover {
+    background-color: #f3f7d6;
+    color: #424436;
+  }
 .active {
     color: var(--active-text-color)!important;
 }
+.active:hover{
+    color: var(--text-color-navigation-hover)!important;
+  }
+
+@media (max-width: 1000px) {
+    .favorite_products {
+    gap: 20px;
+  }
+}
+@media (max-width: 768px) {
+    .favorite_products{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+  

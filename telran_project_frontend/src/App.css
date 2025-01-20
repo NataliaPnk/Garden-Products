@@ -36,6 +36,10 @@ section {
   --active-text-color-light: black; 
   --active-text-color-dark: white;
   --active-text-color: var(--active-text-color-light); 
+  --fill: rgba(66, 68, 54, 1);
+  --button-hover: #424436;
+  --text-color-hover: white;
+  --text-color-navigation-hover: #424436;
 }
 
 [ data-theme= 'dark'] {
@@ -44,5 +48,8 @@ section {
   --background-color-another:#383A2C;
   --text-color:#FFFFFF;
   --active-text-color: var(--active-text-color-dark);
-
+  --fill: #92A134;
+  --button-hover: #F2F6D3;
+  --text-color-hover:#424436;
+  --text-color-navigation-hover: #424436;
 }

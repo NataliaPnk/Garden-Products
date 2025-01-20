@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import s from './index.module.css'
-import ProductsContainer from '../../components/ProductsContainer'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllProducts } from '../../requests/products';
 import { Link, useLocation } from 'react-router-dom';
@@ -51,18 +50,12 @@ export default function AllProductsPage() {
 
     <div className={s.all_products}>
       {loading ? (
-        <div >
           <Skeleton count={11} />
-        </div>
       ) :  (
         allProductsState
           .filter((el) => el.visible)
           .map((product) => <ProductCard key={product.id} {...product} />)
       )}
-    {/* //    (
-    //     <ProductsContainer products={allProductsState}/>
-    //   )
-      } */}
     </div>
   </section>
 

@@ -157,7 +157,7 @@ export default function ProductsByCategoryPage() {
         <input type="checkbox" name="vehicle3" checked={showOnlyDiscount} onChange={handleShowOnlyDiscount} />
         <div>Sorted</div>
         <select value={sortProducts} onChange={handleSortProductsChange}>
-          <option value="by-default">By default</option>
+          <option value="by-default">by default</option>
           <option value="price-low-to-high">Price low to high</option>
           <option value="price-high-to-low">Price high to low</option>
         </select>

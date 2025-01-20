@@ -66,3 +66,22 @@ a {
   margin-top: 32px;
   margin: 0 auto;
 }
+@media (max-width: 1000px) {
+  .bigItem{
+    width: 470px;
+  }
+  .smallItem{
+    width: 470px;
+  }
+}
+@media (max-width: 768px) {
+  .bigItem{
+    width: 479px;
+  }
+  .smallItem{
+    width: 229px;
+  }
+  .footer h2{
+    font-size: 56px;
+  }
+}
