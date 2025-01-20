@@ -71,6 +71,11 @@ export default function ProductCard({
             <div>
               <p>${discont_price || discountPrice.toFixed(2)}</p>{" "}
               <span>${price}</span>
+              {discont_price ? (
+                <div className={s.discount_mark}>
+                  {`-${(((price - discont_price) / price) * 100).toFixed(0)}%`}
+                </div>
+              ) : null}
             </div>
           ) : (
             <p>${price}</p>
