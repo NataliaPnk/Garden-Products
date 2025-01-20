@@ -98,3 +98,18 @@
 .card:hover > div:last-of-type {
   visibility: visible;
 }
+
+.discount_mark {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  background-color: #f26d22;
+  height: 34px;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin-top: 15px;
+  position: absolute;
+  left: 5%;
+  top: 2%;
+}

@@ -6,6 +6,7 @@ import ProductCard from "../ProductCard";
 
 export default function ProductsSaleContainer() {
   const productsState = useSelector((store) => store.products)
+    .filter((product) => product.discont_price !== null && product.visible)
     .sort(() => Math.random() - 0.5)
     .filter((el, i) => i <= 3);
 
